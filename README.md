@@ -100,7 +100,7 @@ prompt-manager/
 * Git
 * GitHub
 
-## 프로젝트 화면
+## 프로젝트 실행 및 주요 화면
 
 ### 1. GitHub 프로젝트 구조
 
