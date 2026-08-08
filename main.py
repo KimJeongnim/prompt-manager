@@ -109,7 +109,7 @@ def search_by_category():
     print("4) 페르소나")
     print("5) 자동화")
     print("6) 기타")
-    
+
     category_dict = {
         "1": "텍스트 생성",
         "2": "이미지 생성",
@@ -119,24 +119,29 @@ def search_by_category():
         "6": "기타"
     }
 
-    # 1. 카테고리 번호 입력받기
+    # 카테고리 번호 입력
     cat_choice = input("선택: ").strip()
+
     if cat_choice not in category_dict:
         print("올바른 번호를 선택해주세요.")
         return
 
     selected_category = category_dict[cat_choice]
+
     print(f"\n[{selected_category}] 카테고리 프롬프트:")
 
-    # 2. 해당 카테고리와 일치하는 프롬프트 찾기
+    # 해당 카테고리의 프롬프트만 찾기
     found_count = 0
+
     for i, p in enumerate(prompts, start=1):
         if p["category"] == selected_category:
             found_count += 1
+
             fav_mark = " ⭐" if p["favorite"] else ""
+
             print(f"{found_count}. {p['title']}{fav_mark}")
 
-    # 3. 결과가 없는 경우 안내 메시지 출력
+    # 해당 카테고리에 프롬프트가 없는 경우
     if found_count == 0:
         print("해당 카테고리에 등록된 프롬프트가 없습니다.")
     else:
@@ -144,22 +149,28 @@ def search_by_category():
 
 def search_prompts():
     print("\n=== 프롬프트 검색 ===")
+
     keyword = input("검색할 키워드를 입력하세요: ").strip().lower()
-    
+
+    # 검색어가 비어있는 경우
     if not keyword:
         print("키워드를 입력해야 검색이 가능합니다.")
         return
 
     print(f"\n'{keyword}' 검색 결과:")
+
     found_count = 0
-    
-    for p in prompts:
-        # 제목이나 내용에 키워드가 포함되어 있는지 확인
+
+    # 제목 또는 내용에서 키워드 검색
+    for i, p in enumerate(prompts, start=1):
         if keyword in p["title"].lower() or keyword in p["content"].lower():
             found_count += 1
+
             fav_mark = " ⭐" if p["favorite"] else ""
-            print(f"- {p['title']} [{p['category']}] {fav_mark}")
-            
+
+            print(f"{found_count}. [{p['category']}] {p['title']}{fav_mark}")
+
+    # 검색 결과가 없는 경우
     if found_count == 0:
         print("검색 결과가 없습니다.")
     else:
@@ -234,7 +245,21 @@ def manage_favorite():
         print("존재하지 않는 번호입니다.")
 
 def show_favorites():
-    print("\n[즐겨찾기 목록 기능 구현 예정]")
+    print("\n=== 즐겨찾기 목록 ===")
+
+    # 즐겨찾기된 프롬프트만 찾기
+    favorite_count = 0
+
+    for i, p in enumerate(prompts, start=1):
+        if p["favorite"]:
+            favorite_count += 1
+            print(f"{favorite_count}. [{p['category']}] {p['title']} ⭐")
+
+    # 즐겨찾기가 하나도 없는 경우
+    if favorite_count == 0:
+        print("즐겨찾기된 프롬프트가 없습니다.")
+    else:
+        print(f"\n총 {favorite_count}개의 즐겨찾기")
 
 
 # 4. 메인 실행 루프 (여기를 수정하면 됩니다!)
