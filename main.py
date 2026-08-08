@@ -142,8 +142,28 @@ def search_by_category():
     else:
         print(f"\n총 {found_count}개의 프롬프트")
 
-def search_prompt():
-    print("\n[프롬프트 검색 기능 구현 예정]")
+def search_prompts():
+    print("\n=== 프롬프트 검색 ===")
+    keyword = input("검색할 키워드를 입력하세요: ").strip().lower()
+    
+    if not keyword:
+        print("키워드를 입력해야 검색이 가능합니다.")
+        return
+
+    print(f"\n'{keyword}' 검색 결과:")
+    found_count = 0
+    
+    for p in prompts:
+        # 제목이나 내용에 키워드가 포함되어 있는지 확인
+        if keyword in p["title"].lower() or keyword in p["content"].lower():
+            found_count += 1
+            fav_mark = " ⭐" if p["favorite"] else ""
+            print(f"- {p['title']} [{p['category']}] {fav_mark}")
+            
+    if found_count == 0:
+        print("검색 결과가 없습니다.")
+    else:
+        print(f"\n총 {found_count}개의 프롬프트를 찾았습니다.")
 
 def show_detail():
     print("\n[프롬프트 상세 보기 기능 구현 예정]")
@@ -167,7 +187,7 @@ while True:
     elif choice == "3":
         search_by_category()
     elif choice == "4":
-        search_prompt()
+        search_prompts()
     elif choice == "5":
         show_detail()
     elif choice == "6":
