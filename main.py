@@ -34,13 +34,113 @@ def show_menu():
 
 # 3. 각 기능을 담당할 함수들 뼈대 (앞으로 채워나갈 곳)
 def add_prompt():
-    print("\n[프롬프트 추가 기능 구현 예정]")
+    print("\n=== 프롬프트 추가 ===")
+    
+    # 1. 제목 입력 (비어있으면 다시 입력받기)
+    while True:
+        title = input("제목: ").strip()
+        if title != "":
+            break
+        print("제목은 비워둘 수 없습니다. 다시 입력해주세요.")
+
+    # 2. 내용 입력 (비어있으면 다시 입력받기)
+    while True:
+        content = input("내용: ").strip()
+        if content != "":
+            break
+        print("내용은 비워둘 수 없습니다. 다시 입력해주세요.")
+
+    # 3. 카테고리 선택
+    print("\n카테고리 선택:")
+    print("1) 텍스트 생성")
+    print("2) 이미지 생성")
+    print("3) 영상 생성")
+    print("4) 페르소나")
+    print("5) 자동화")
+    print("6) 기타")
+    
+    category_dict = {
+        "1": "텍스트 생성",
+        "2": "이미지 생성",
+        "3": "영상 생성",
+        "4": "페르소나",
+        "5": "자동화",
+        "6": "기타"
+    }
+
+    while True:
+        cat_choice = input("선택: ").strip()
+        if cat_choice in category_dict:
+            category = category_dict[cat_choice]
+            break
+        print("올바른 번호를 선택해주세요.")
+
+    # 4. 새로운 프롬프트 딕셔너리 생성 후 리스트에 추가
+    new_prompt = {
+        "title": title,
+        "content": content,
+        "category": category,
+        "favorite": False  # 기본 즐겨찾기 값은 False
+    }
+
+    prompts.append(new_prompt)
+    print("\n프롬프트가 추가되었습니다!")
 
 def show_list():
-    print("\n[프롬프트 목록 기능 구현 예정]")
+    print("\n=== 프롬프트 목록 ===")
+    
+    # 등록된 프롬프트가 없는 경우
+    if len(prompts) == 0:
+        print("등록된 프롬프트가 없습니다.")
+        return
+
+    # 리스트를 순회하며 번호, 카테고리, 제목, 즐겨찾기 출력
+    for i, p in enumerate(prompts, start=1):
+        fav_mark = " ⭐" if p["favorite"] else ""
+        print(f"{i}. [{p['category']}] {p['title']}{fav_mark}")
+    
+    print(f"\n총 {len(prompts)}개의 프롬프트")
 
 def search_by_category():
-    print("\n[카테고리별 조회 기능 구현 예정]")
+    print("\n=== 카테고리별 조회 ===")
+    print("1) 텍스트 생성")
+    print("2) 이미지 생성")
+    print("3) 영상 생성")
+    print("4) 페르소나")
+    print("5) 자동화")
+    print("6) 기타")
+    
+    category_dict = {
+        "1": "텍스트 생성",
+        "2": "이미지 생성",
+        "3": "영상 생성",
+        "4": "페르소나",
+        "5": "자동화",
+        "6": "기타"
+    }
+
+    # 1. 카테고리 번호 입력받기
+    cat_choice = input("선택: ").strip()
+    if cat_choice not in category_dict:
+        print("올바른 번호를 선택해주세요.")
+        return
+
+    selected_category = category_dict[cat_choice]
+    print(f"\n[{selected_category}] 카테고리 프롬프트:")
+
+    # 2. 해당 카테고리와 일치하는 프롬프트 찾기
+    found_count = 0
+    for i, p in enumerate(prompts, start=1):
+        if p["category"] == selected_category:
+            found_count += 1
+            fav_mark = " ⭐" if p["favorite"] else ""
+            print(f"{found_count}. {p['title']}{fav_mark}")
+
+    # 3. 결과가 없는 경우 안내 메시지 출력
+    if found_count == 0:
+        print("해당 카테고리에 등록된 프롬프트가 없습니다.")
+    else:
+        print(f"\n총 {found_count}개의 프롬프트")
 
 def search_prompt():
     print("\n[프롬프트 검색 기능 구현 예정]")
