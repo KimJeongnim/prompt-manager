@@ -125,7 +125,7 @@ prompt-manager/
     ├── 13_category.png     # 카테고리별 프롬프트 조회 화면
     ├── 14_detail.png       # 프롬프트 상세 내용 조회 화면
     ├── 15_git_version.png  # Git 버전 확인 화면
-    └── 16_git_clone.png    # Git Clone 실행 화면 
+    └── 16_git_clone.png    # Git Clone 실행 화면
 ```
 
 
@@ -136,7 +136,7 @@ prompt-manager/
 * Git
 * GitHub
 
-### 1. Python 개발 환경 확인
+### 1. Python 개발 환경
 
 Python 버전이 3.10 이상인지 확인했습니다.
 
