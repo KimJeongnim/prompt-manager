@@ -4,6 +4,10 @@ Python으로 제작한 **콘솔 기반 프롬프트 관리 프로그램**입니�
 
 생성형 AI를 사용하면서 쌓이는 다양한 프롬프트를 카테고리별로 관리하고, 필요한 프롬프트를 검색하거나 즐겨찾기로 관리할 수 있도록 제작했습니다.
 
+## GitHub 저장소
+
+[GitHub 저장소 바로가기](https://github.com/KimJeongnim/prompt-manager)
+
 ## 주요 기능
 
 * 프롬프트 추가
@@ -128,7 +132,6 @@ Python 버전이 3.10 이상인지 확인했습니다.
 
 Git이 정상적으로 설치되어 있는지 확인합니다.
 
-git --version
 ![Git 버전 확인](images/10_version.png)
 
 ### Git 사용자 설정
