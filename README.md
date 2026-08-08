@@ -124,7 +124,8 @@ prompt-manager/
     ├── 12_vscode.png       # VSCode 프로젝트 및 개발 환경 화면
     ├── 13_category.png     # 카테고리별 프롬프트 조회 화면
     ├── 14_detail.png       # 프롬프트 상세 내용 조회 화면
-    └── 15_git_version.png  # Git 버전 확인 화면
+    ├── 15_git_version.png  # Git 버전 확인 화면
+    └── 16_git_clone.png    # Git Clone 실행 화면 
 ```
 
 
