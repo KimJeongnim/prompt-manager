@@ -203,7 +203,35 @@ def view_detail():
         print("존재하지 않는 프롬프트 번호입니다.")
 
 def manage_favorite():
-    print("\n[즐겨찾기 관리 기능 구현 예정]")
+    print("\n=== 즐겨찾기 관리 ===")
+    
+    if not prompts:
+        print("등록된 프롬프트가 없습니다.")
+        return
+
+    # 1. 목록 보여주기
+    for i, p in enumerate(prompts, start=1):
+        fav_mark = " ⭐" if p["favorite"] else " [ ]"
+        print(f"{i}. {fav_mark} {p['title']}")
+
+    # 2. 번호 입력받기
+    choice_input = input("\n즐겨찾기 상태를 변경할 프롬프트 번호 입력 (취소는 0): ").strip()
+    if choice_input == "0":
+        return
+
+    if not choice_input.isdigit():
+        print("올바른 숫자를 입력해주세요.")
+        return
+
+    idx = int(choice_input) - 1
+
+    # 3. 상태 반전 (True <-> False)
+    if 0 <= idx < len(prompts):
+        prompts[idx]["favorite"] = not prompts[idx]["favorite"]
+        status = "즐겨찾기 추가됨" if prompts[idx]["favorite"] else "즐겨찾기 해제됨"
+        print(f"'{prompts[idx]['title']}' 프롬프트가 {status}!")
+    else:
+        print("존재하지 않는 번호입니다.")
 
 def show_favorites():
     print("\n[즐겨찾기 목록 기능 구현 예정]")
