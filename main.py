@@ -165,8 +165,42 @@ def search_prompts():
     else:
         print(f"\n총 {found_count}개의 프롬프트를 찾았습니다.")
 
-def show_detail():
-    print("\n[프롬프트 상세 보기 기능 구현 예정]")
+def view_detail():
+    print("\n=== 프롬프트 상세 보기 ===")
+    
+    if not prompts:
+        print("등록된 프롬프트가 없습니다.")
+        return
+
+    # 1. 전체 목록을 먼저 간략하게 보여주기
+    for i, p in enumerate(prompts, start=1):
+        fav_mark = " ⭐" if p["favorite"] else ""
+        print(f"{i}. {p['title']} [{p['category']}]{fav_mark}")
+
+    # 2. 상세히 볼 번호 입력받기
+    choice_input = input("\n상세 볼 프롬프트 번호 입력 (취소는 0): ").strip()
+    if choice_input == "0":
+        return
+
+    if not choice_input.isdigit():
+        print("올바른 숫자를 입력해주세요.")
+        return
+
+    idx = int(choice_input) - 1
+
+    # 3. 범위 내의 번호인지 확인 후 상세 내용 출력
+    if 0 <= idx < len(prompts):
+        p = prompts[idx]
+        fav_mark = "⭐ (즐겨찾기 됨)" if p["favorite"] else "일반"
+        print(f"\n================================")
+        print(f" 제목 : {p['title']}")
+        print(f" 카테고리 : {p['category']}")
+        print(f" 상태 : {fav_mark}")
+        print(f"--------------------------------")
+        print(f" [ 내용 ]\n{p['content']}")
+        print(f"================================")
+    else:
+        print("존재하지 않는 프롬프트 번호입니다.")
 
 def manage_favorite():
     print("\n[즐겨찾기 관리 기능 구현 예정]")
@@ -189,7 +223,7 @@ while True:
     elif choice == "4":
         search_prompts()
     elif choice == "5":
-        show_detail()
+        view_detail()
     elif choice == "6":
         manage_favorite()
     elif choice == "7":
