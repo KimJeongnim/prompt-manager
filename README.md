@@ -117,11 +117,19 @@ images/                         # 프로젝트 실행 및 개발 과정 스크�
 * Git
 * GitHub
 
-### Python 버전 확인
+### 1. Python 버전 확인
 
 Python 버전이 3.10 이상인지 확인했습니다.
 
-![Python 버전 확인](images/10_version.png)
+![Python 버전 확인](images/15_git_version.png)
+
+
+### 2. Git 버전 확인
+
+Git이 정상적으로 설치되어 있는지 확인합니다.
+
+git --version
+![Git 버전 확인](images/10_version.png)
 
 ### Git 사용자 설정
 
