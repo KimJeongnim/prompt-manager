@@ -88,9 +88,19 @@ python main.py
 
 ```text
 prompt-manager/
-├── main.py       # 프롬프트 관리 프로그램
-├── README.md     # 프로젝트 설명 및 사용 방법
-└── .gitignore    # Git 관리에서 제외할 파일 설정
+├── main.py                 # 프롬프트 관리 프로그램
+├── README.md               # 프로젝트 설명 및 사용 방법
+├── .gitignore              # Git 관리에서 제외할 파일 설정
+└── images/                 # 프로젝트 실행 및 개발 과정 스크린샷
+    ├── 01_github.png       # GitHub 프로젝트 구조
+    ├── 02_main.png         # 프로그램 실행
+    ├── 03_list.png         # 프롬프트 목록
+    ├── 04_search.png       # 프롬프트 검색
+    ├── 05_favorite.png     # 즐겨찾기 추가
+    ├── 06_favorites.png    # 즐겨찾기 목록
+    ├── 07_add_prompt.png   # add_prompt() 구현
+    ├── 08_show_menu.png    # show_menu() 구현
+    └── 09_git_log.png      # Git 커밋 및 브랜치 로그
 ``` 
 
 ## 개발 환경
@@ -100,15 +110,23 @@ prompt-manager/
 * Git
 * GitHub
 
+## Git 관리
+
+기능별로 브랜치를 생성하여 작업하고, 기능이 완성되면 커밋한 후 main 브랜치로 병합했습니다.
+
+- 기능 단위로 의미 있는 커밋 작성
+- 기능별 브랜치 생성 및 작업
+- `checkout`을 이용한 브랜치 이동
+- `merge`를 이용한 기능 병합
+- GitHub 원격 저장소에 코드 업로드
+
 ## 프로젝트 실행 및 주요 화면
 
 ### 1. GitHub 프로젝트 구조
 
 GitHub 저장소에서 프로젝트 파일과 README를 확인할 수 있습니다.
 
-![GitHub 프로젝트 구조]
-
-<img width="1192" height="946" alt="01_github" src="https://github.com/user-attachments/assets/57f0cba2-d228-479e-8ef6-108485130525" />
+![GitHub 프로젝트 구조](images/01_github.png)
 
 
 
@@ -116,67 +134,56 @@ GitHub 저장소에서 프로젝트 파일과 README를 확인할 수 있습니�
 
 `python main.py` 명령어를 통해 프로그램을 실행합니다.
 
-![프로그램 실행]
-
-<img width="333" height="210" alt="02_main" src="https://github.com/user-attachments/assets/d7ccac70-ffe5-48a2-9210-b01a7068a50c" />
+![프로그램 실행](images/02_main.png)
 
 
 ### 3. 프롬프트 목록 조회
 
 등록된 프롬프트의 제목, 카테고리 및 즐겨찾기 상태를 확인할 수 있습니다.
 
-![프롬프트 목록]
-
-<img width="378" height="157" alt="03_list" src="https://github.com/user-attachments/assets/d0f5821d-1903-47da-96d4-cdfa7591ff53" />
+![프롬프트 목록](images/03_list.png)
 
 
 ### 4. 프롬프트 검색
 
 검색어를 입력하여 원하는 프롬프트를 검색할 수 있습니다.
 
-![프롬프트 검색]
-
-<img width="380" height="178" alt="04_search" src="https://github.com/user-attachments/assets/283cbb12-2852-4ddc-876a-6b35a2defba5" />
-
+![프롬프트 검색](images/04_search.png)
 
 
 ### 5. 즐겨찾기 추가
 
 원하는 프롬프트를 선택하여 즐겨찾기로 추가하거나 해제할 수 있습니다.
 
-![즐겨찾기 추가]
-
-<img width="402" height="179" alt="05_favorite" src="https://github.com/user-attachments/assets/f8c8bff2-b3e9-4b5b-98fb-f85d9160a263" />
+![즐겨찾기 추가](images/05_favorite.png)
 
 
 ### 6. 즐겨찾기 목록
 
 즐겨찾기로 등록된 프롬프트만 별도로 확인할 수 있습니다.
 
-![즐겨찾기 목록]
-
-<img width="273" height="129" alt="06_favorites" src="https://github.com/user-attachments/assets/5d634aa4-7b1c-4d71-99d0-66a2accbd4f7" />
-
+![즐겨찾기 목록](images/06_favorites.png)
 
 
 ### 7. 프롬프트 추가 기능 구현
 
 `add_prompt()` 함수를 통해 제목, 내용, 카테고리를 입력받고 새로운 프롬프트를 리스트에 추가하도록 구현했습니다.
 
-![프롬프트 추가 코드]
-
-<img width="688" height="613" alt="07_add_prompt" src="https://github.com/user-attachments/assets/c68ec27a-6bc3-493e-bc7b-9e173edb8702" />
-
+![프롬프트 추가 코드](images/07_add_prompt.png)
 
 
 ### 8. 메뉴 출력 기능 구현
 
 `show_menu()` 함수를 통해 프로그램의 주요 기능을 메뉴 형태로 출력하도록 구현했습니다.
 
-![메뉴 출력 코드]
+![메뉴 출력 코드](images/08_show_menu.png)
 
-<img width="690" height="557" alt="08_show_menu" src="https://github.com/user-attachments/assets/9fc5c17d-c7f6-4ef3-bc60-396ed988e42a" />
 
+### 9. Git 커밋 및 브랜치 기록
+
+기능별 커밋과 브랜치 생성 및 병합 과정을 Git 로그로 확인할 수 있습니다.
+
+![Git 로그](images/09_git_log.png)
 
 ## 프로젝트 목적
 
