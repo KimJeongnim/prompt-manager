@@ -84,6 +84,15 @@ python main.py
 * Tripmind AI 광고 - 지친 여행자 탈출
 * 핵심 쏙쏙 회의록 요약
 
+## 프로젝트 구조
+
+```text
+prompt-manager/
+├── main.py       # 프롬프트 관리 프로그램
+├── README.md     # 프로젝트 설명 및 사용 방법
+└── .gitignore    # Git 관리에서 제외할 파일 설정
+``` 
+
 ## 개발 환경
 
 * Python 3.10 이상
