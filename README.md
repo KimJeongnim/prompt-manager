@@ -91,17 +91,24 @@ prompt-manager/
 ├── main.py                 # 프롬프트 관리 프로그램
 ├── README.md               # 프로젝트 설명 및 사용 방법
 ├── .gitignore              # Git 관리에서 제외할 파일 설정
-└── images/                 # 프로젝트 실행 및 개발 과정 스크린샷
-    ├── 01_github.png       # GitHub 프로젝트 구조
-    ├── 02_main.png         # 프로그램 실행
-    ├── 03_list.png         # 프롬프트 목록
-    ├── 04_search.png       # 프롬프트 검색
-    ├── 05_favorite.png     # 즐겨찾기 추가
-    ├── 06_favorites.png    # 즐겨찾기 목록
-    ├── 07_add_prompt.png   # add_prompt() 구현
-    ├── 08_show_menu.png    # show_menu() 구현
-    └── 09_git_log.png      # Git 커밋 및 브랜치 로그
-``` 
+└──```text
+images/                         # 프로젝트 실행 및 개발 과정 스크린샷
+├── 01_github.png              # GitHub 저장소 및 프로젝트 파일 구조
+├── 02_main.png                # 프로그램 실행 및 메인 메뉴 화면
+├── 03_list.png                # 등록된 프롬프트 전체 목록 조회
+├── 04_search.png              # 키워드를 이용한 프롬프트 검색
+├── 05_favorite.png            # 프롬프트 즐겨찾기 추가 및 해제
+├── 06_favorites.png           # 즐겨찾기 프롬프트 목록 조회
+├── 07_add_prompt.png          # add_prompt() 함수 구현 화면
+├── 08_show_menu.png           # show_menu() 함수 구현 화면
+├── 09_git_log.png             # Git 커밋 10개 이상 및 브랜치 병합 기록
+├── 10_version.png             # Python 버전 확인 화면
+├── 11_git_setting.png         # Git 사용자 이름 및 이메일 설정 화면
+├── 12_vscode.png              # VSCode 프로젝트 및 개발 환경 화면
+├── 13_category.png            # 카테고리별 프롬프트 조회 화면
+└── 14_detail.png              # 프롬프트 상세 내용 조회 화면
+```
+
 
 ## 개발 환경
 
@@ -109,6 +116,24 @@ prompt-manager/
 * Visual Studio Code
 * Git
 * GitHub
+
+### Python 버전 확인
+
+Python 버전이 3.10 이상인지 확인했습니다.
+
+![Python 버전 확인](images/10_version.png)
+
+### Git 사용자 설정
+
+Git 사용자 이름과 이메일이 설정되어 있는지 확인했습니다.
+
+![Git 사용자 설정](images/11_git_setting.png)
+
+### VSCode 개발 환경
+
+VSCode에서 프로젝트를 생성하고 Python 프로그램을 개발했습니다.
+
+![VSCode 개발 환경](images/12_vscode.png)
 
 ## Git 관리
 
@@ -150,7 +175,7 @@ GitHub 저장소에서 프로젝트 파일과 README를 확인할 수 있습니�
 
 원하는 프롬프트를 선택하여 즐겨찾기로 추가하거나 해제할 수 있습니다.
 
-![즐겨찾기 추가](images/05_favorite.png)
+![즐겨찾기 추가 및 해제](images/05_favorite.png)
 
 ### 6. 즐겨찾기 목록
 
@@ -158,19 +183,31 @@ GitHub 저장소에서 프로젝트 파일과 README를 확인할 수 있습니�
 
 ![즐겨찾기 목록](images/06_favorites.png)
 
-### 7. 프롬프트 추가 기능 구현
+### 7. 카테고리별 조회
+
+카테고리를 선택하여 해당 카테고리에 등록된 프롬프트만 조회할 수 있습니다.
+
+![카테고리별 조회](images/13_category.png)
+
+### 8. 프롬프트 상세 보기
+
+프롬프트의 제목, 카테고리, 즐겨찾기 상태 및 전체 내용을 확인할 수 있습니다.
+
+![프롬프트 상세 보기](images/14_detail.png)
+
+### 9. 프롬프트 추가 기능 구현
 
 `add_prompt()` 함수를 통해 제목, 내용, 카테고리를 입력받고 새로운 프롬프트를 리스트에 추가하도록 구현했습니다.
 
-![프롬프트 추가 코드](images/07_add_prompt.png)
+![프롬프트 추가 기능 구현](images/07_add_prompt.png)
 
-### 8. 메뉴 출력 기능 구현
+### 10. 메뉴 출력 기능 구현
 
 `show_menu()` 함수를 통해 프로그램의 주요 기능을 메뉴 형태로 출력하도록 구현했습니다.
 
-![메뉴 출력 코드](images/08_show_menu.png)
+![메뉴 출력 기능 구현](images/08_show_menu.png)
 
-### 9. Git 커밋 및 브랜치 기록
+### 11. Git 커밋 및 브랜치 기록
 
 기능별 커밋과 브랜치 생성 및 병합 과정을 Git 로그로 확인할 수 있습니다.
 
