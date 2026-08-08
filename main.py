@@ -32,6 +32,15 @@ def show_menu():
     print("7. 즐겨찾기 목록")
     print("0. 종료")
 
+#  카테고리 출력 함수
+def show_categories():
+    print("1) 텍스트 생성")
+    print("2) 이미지 생성")
+    print("3) 영상 생성")
+    print("4) 페르소나")
+    print("5) 자동화")
+    print("6) 기타")
+
 # 3. 각 기능을 담당할 함수들 뼈대 (앞으로 채워나갈 곳)
 def add_prompt():
     print("\n=== 프롬프트 추가 ===")
@@ -50,14 +59,9 @@ def add_prompt():
             break
         print("내용은 비워둘 수 없습니다. 다시 입력해주세요.")
 
-    # 3. 카테고리 선택
+   # 3. 카테고리 선택
     print("\n카테고리 선택:")
-    print("1) 텍스트 생성")
-    print("2) 이미지 생성")
-    print("3) 영상 생성")
-    print("4) 페르소나")
-    print("5) 자동화")
-    print("6) 기타")
+    show_categories()
     
     category_dict = {
         "1": "텍스트 생성",
@@ -103,12 +107,7 @@ def show_list():
 
 def search_by_category():
     print("\n=== 카테고리별 조회 ===")
-    print("1) 텍스트 생성")
-    print("2) 이미지 생성")
-    print("3) 영상 생성")
-    print("4) 페르소나")
-    print("5) 자동화")
-    print("6) 기타")
+    show_categories()
 
     category_dict = {
         "1": "텍스트 생성",
@@ -133,12 +132,10 @@ def search_by_category():
     # 해당 카테고리의 프롬프트만 찾기
     found_count = 0
 
-    for i, p in enumerate(prompts, start=1):
+    for p in prompts:
         if p["category"] == selected_category:
             found_count += 1
-
             fav_mark = " ⭐" if p["favorite"] else ""
-
             print(f"{found_count}. {p['title']}{fav_mark}")
 
     # 해당 카테고리에 프롬프트가 없는 경우
